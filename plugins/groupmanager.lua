@@ -503,7 +503,7 @@ end
 if i == 0 then
 tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ لا يوجد بوتات في المجموعة 🛠', 1, 'md')
 else
-tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ عدد البوتات الموجودة [<code>'..i..'</code>] بوت💯',1, 'html')
+tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ عدد البوتات الموجودة [<code>'..i..'</code>] بوت🛠',1, 'html')
 end
 end
 tdcli.getChannelMembers(msg.to.id, 0, 'Bots', 100, kshf, nil)
@@ -624,7 +624,7 @@ end
 if msg.text then
 if (msg.text:match("^([https?://w]*.?telegram.me/joinchat/%S+)$") or msg.text:match("^([https?://w]*.?t.me/joinchat/%S+)$")) and redis:get(th3boss..'waiting_link'..msg.from.id) and is_owner(msg) then  -- استقبال الرابط
 redis:set(th3boss..'linkgp'..msg.to.id,msg.text)
-return "❖￤ _شكرأ لك 😻_\n❖￤ _تم حفظ الرابط بنجاح _✔️"
+return "❖￤ _شكرأ لك 😻_\n❖￤ _تم حفظ الرابط بنجاح _✓"
 end
 ----------------------------------------------------
 if redis:get(th3boss..'welcom:witting'..msg.from.id) then -- استقبال كليشه الترحيب
@@ -636,7 +636,7 @@ end
 if redis:get(th3boss..'rulse:witting'..msg.from.id) then --- استقبال القوانين
 redis:del(th3boss..'rulse:witting'..msg.from.id)
 redis:set(th3boss..'rulse:msg'..msg.to.id,check_markdown(msg.text))
-return '❖￤ _مرحبآ عزيزي_\n❖￤ _تم حفظ القوانين بنجاح_✔️\n❖￤ _اكتب [ القوانين ] لعرضها 💬_'
+return '❖￤ _مرحبآ عزيزي_\n❖￤ _تم حفظ القوانين بنجاح_✓\n❖￤ _اكتب [ القوانين ] لعرضها 💬_'
 end
 ----------------------------------------------------------
 if redis:get(th3boss..'name:witting'..msg.from.id) then --- استقبال الوصف
@@ -650,7 +650,7 @@ redis:del(th3boss..'about:witting'..msg.from.id)
 if msg.to.type == "channel" then
 tdcli.changeChannelAbout(msg.to.id, msg.text, dl_cb, nil)
 end
-return "❖￤ _تم وضع الوصف بنجاح_✔️"
+return "❖￤ _تم وضع الوصف بنجاح_✓"
 end
 --------------------------------------------------------------------
 if redis:get(th3boss..'fwd:all'..msg.from.id) then ---- استقبال رساله الاذاعه عام
