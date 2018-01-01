@@ -30,7 +30,7 @@ redis:setex(th3boss..'extimeadd'..msg.to.id, 300 , true)
 local msg_welcom = [[❖￤ مـرحبآ آنآ بوت آسـمـي ]]..bot_name..[[ 🎖
 ❖￤ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 ❖￤ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
-❖￤ مـعرف آلمـطـور  : ]]..check_markdowns(udouser)..[[ 🌿
+❖￤ مـعرف آلمـطـور  : ]]..sudouser..[[ 🌿
 👨🏽‍🔧]]
  return tdcli.sendPhoto(msg.to.id, msg.id, 0, 1, nil, './data/photo/boss.jpg', msg_welcom)
 end
@@ -67,9 +67,9 @@ return tdcli.sendMessage(msg.to.id, msg.id_,1, '❖￤ حدث خطا حاول ا
 end
 sleep(0.5)
 if file_exi(msg.content_.photo_.id_..'_(1).jpg', tcpath..'/data/photo') then
-os.rename(tcpath..'/data/photo/'..msg.content_.photo_.id_..'_(1).jpg', './data/photo/th3boss.jpg')
+os.rename(tcpath..'/data/photo/'..msg.content_.photo_.id_..'_(1).jpg', './data/photo/boss.jpg')
 else
-os.rename(tcpath..'/data/photo/'..msg.content_.photo_.id_..'.jpg', './data/photo/th3boss.jpg')
+os.rename(tcpath..'/data/photo/'..msg.content_.photo_.id_..'.jpg', './data/photo/boss.jpg')
 end
 tdcli.sendMessage(msg.to.id, msg.id_,1, '❖￤ تم تغيير صـورهہ‏‏ آلترحيب للبوت 🌿', 1, 'html')
 end
