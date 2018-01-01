@@ -1347,11 +1347,11 @@ return tdcli.sendMessage(arg.chat_id, "", 0, '❖￤ العضو  ⇔  '..user_na
 end
 if cmd == "remwhitelist" then
 if not redis:sismember(th3boss..'whitelist:'..arg.chat_id,data.id_) then
-return tdcli.sendMessage(arg.chat_id, "", 0, '❖￤ العضو  ⇔  '..user_name..'\n❖￤  الايدي  ⇔  *( '..data.id_..' )*\n❖￤ انه بالتأكيد ليس من عضو مميز ✓ _', 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, '❖￤ العضو  ⇔  '..user_name..'\n❖￤  الايدي  ⇔  *( '..data.id_..' )*\n❖￤_ انه بالتأكيد ليس من عضو مميز ✓ _', 0, "md")
 end
 redis:hdel(th3boss..'username:'..data.id_, 'username', user_name)
 redis:srem(th3boss..'whitelist:'..arg.chat_id,data.id_)
-return tdcli.sendMessage(arg.chat_id, "", 0, '❖￤ العضو  ⇔  '..user_name..' \n❖￤  الايدي  ⇔  *( '..data.id_..' )*\n❖￤ تمت تنزيله من عضو مميز ✓_', 0, "md")
+return tdcli.sendMessage(arg.chat_id, "", 0, '❖￤ العضو  ⇔  '..user_name..' \n❖￤  الايدي  ⇔  *( '..data.id_..' )*\n❖￤_ تمت تنزيله من عضو مميز ✓_', 0, "md")
 end
 if cmd == "setowner" then
 if redis:sismember(th3boss..'owners:'..arg.chat_id,data.id_) then
@@ -1677,10 +1677,3 @@ end
 -- BY @TH3BOSS
 -- BY @lBOSSl
 -- V25
-   
-   
-   
-   
-   
-  
-   
