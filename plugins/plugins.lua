@@ -189,7 +189,7 @@ reload_plugins( )
 tdcli.sendMessage(msg.to.id, msg.id_,1, '<b>الملف </b> <code>'..matches[2]..'.lua</code> <b> تم رفعه في السورس</b>', 1, 'html')
 else
 tdcli.sendMessage(msg.to.id, msg.id_, 1, '_الملف ليس بصيغه lua._', 1, 'md')
-end
+end 
 else
 tdcli.sendMessage(msg.to.id, msg.id_, 1, '_الملف تالف ارسل الملف مجددا._', 1, 'md')
 end end end
@@ -199,16 +199,23 @@ tdcli_function ({ ID = 'GetMessage', chat_id_ = msg.chat_id_, message_id_ = msg.
 end
 end
 if (matches[1] == 'اصدار السورس' or matches[1] == 'vr') then
-return '👨🏾‍🔧¦ اصدار سورس فير `v'..update..'` 🍃'
+return '👨🏾‍🔧¦ اصدار سورس الزعيم `v'..update..'` 🍃'
 end
 if (matches[1] == 'تحديث السورس' or matches[1] == 'update') and is_sudo(msg) then
 if not we_sudo(msg)  then return "❖￤هذا الاوامر للمطور الاساسي فقط 🛠" end
 
-os.execute('git reset --hard origin/master')
-os.execute('git pull')
-os.execute('chmod +x libs/tg')
-reload_plugins( )
-return "🤖¦ تم تحديـث السورس بنجاح 👍🏿\n👾¦ أكتب `اصدار السورس` للتأكيد🕵🏼️‍♀️\n👨🏾‍🔧¦ تابع القناة @lBOSSl \n👨🏻‍💻¦حته هم تشوف الشغلات الجديده \n🛠¦الي تنزل للسورس فير🍃"
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/banhammer.lua','./plugins/banhammer.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/groupmanager.lua','./plugins/groupmanager.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/dell.lua','./plugins/dell.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/msg_checks.lua','./plugins/msg_checks.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/plugins.lua','./plugins/plugins.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/replay.lua','./plugins/replay.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/tools.lua','./plugins/tools.lua')
+download_to_file('https://raw.githubusercontent.com/moody2020/TH3BOSS/master/plugins/zhrf.lua','./plugins/zhrf.lua')
+
+  plugins = {} 
+  load_plugins() 
+return "🤖¦ تم تحديـث السورس بنجاح 👍🏿\n👾¦ أكتب `اصدار السورس` للتأكيد🕵🏼️‍♀️\n👨🏾‍🔧¦ تابع القناة @lBOSSl \n👨🏻‍💻¦حته هم تشوف الشغلات الجديده \n🛠¦الي تنزل للسورس الزعيم🍃"
 
 end
 end 
