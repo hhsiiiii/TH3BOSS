@@ -22,7 +22,7 @@ if not redis:get(th3boss..'autodeltime') then
      run_bash("rm -rf ~/.telegram-cli/data/encrypted/*")
 	 run_bash("rm -rf ./data/photos/*")
 end
- 
+
 if msg.to.type == "channel" and msg.adduser and msg.adduser == tonumber(our_id) then
 
 if not redis:get(th3boss..'extimeadd'..msg.to.id) then
@@ -30,7 +30,7 @@ redis:setex(th3boss..'extimeadd'..msg.to.id, 300 , true)
 local msg_welcom = [[❖￤ مـرحبآ آنآ بوت آسـمـي ]]..bot_name..[[ 🎖
 ❖￤ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 ❖￤ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
-❖￤ مـعرف آلمـطـور  : ]]..sudouser..[[ 🌿
+❖￤ مـعرف آلمـطـور  : ]]..check_markdowns(udouser)..[[ 🌿
 👨🏽‍🔧]]
  return tdcli.sendPhoto(msg.to.id, msg.id, 0, 1, nil, './data/photo/boss.jpg', msg_welcom)
 end
