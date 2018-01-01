@@ -124,7 +124,7 @@ end
 if redis:get(th3boss..'allreplay:'..msg.from.id) then -- استقبال جواب الرد لكل المجموعات
 redis:hset(th3boss..'replay:all', redis:get(th3boss.."allreplay:"..msg.from.id), msg.text)
 redis:del(th3boss..'addrd_all:'..msg.from.id)
-return '('..check_markdown(redis:get(th3boss..'allreplay:'..msg.from.id))..')\n  ✔️ تم اضافت الرد لكل المجموعات 🚀 '
+return '('..check_markdown(redis:get(th3boss..'allreplay:'..msg.from.id))..')\n  ✓ تم اضافت الرد لكل المجموعات 🚀 '
 end
 end
 -------------------------------------------------------------
@@ -136,7 +136,7 @@ end
 if redis:get(th3boss..'replay1'..msg.from.id) then -- جواب الرد
 redis:hset(th3boss..'replay:'..msg.to.id, redis:get(th3boss.."replay1"..msg.from.id), msg.text)
 redis:del(th3boss..'addrd:'..msg.from.id)
-return '('..check_markdown(redis:get(th3boss..'replay1'..msg.from.id))..')\n  ✔️ تم اضافت الرد 🚀 '
+return '('..check_markdown(redis:get(th3boss..'replay1'..msg.from.id))..')\n  ✓ تم اضافت الرد 🚀 '
 end
 end
 
@@ -148,7 +148,7 @@ if not redis:hget(th3boss..'replay:'..msg.to.id,msg.text) then
 return '🗯هذا الرد ليش مضاف في قائمه الردود 🛠'
 else
 redis:hdel(th3boss..'replay:'..msg.to.id,msg.text)
-return '('..check_markdown(msg.text)..')\n  ✔️ تم مسح الرد 🚀 '
+return '('..check_markdown(msg.text)..')\n  ✓ تم مسح الرد 🚀 '
 end
 end
 -------------------------------------
@@ -158,7 +158,7 @@ if not redis:hget(th3boss..'replay:all',msg.text) then
 return '🗯هذا الرد ليش مضاف في قائمه الردود 🛠'
 else
 redis:hdel(th3boss..'replay:all',msg.text)
-return '('..check_markdown(msg.text)..')\n  ✔️ تم مسح الرد 🚀 '
+return '('..check_markdown(msg.text)..')\n  ✓ تم مسح الرد 🚀 '
 end
 end
 
@@ -171,7 +171,7 @@ local names = redis:hkeys(th3boss..'replay:'..msg.to.id)
 for i=1, #names do
 redis:hdel(th3boss..'replay:'..msg.to.id,names[i])
 end
-return "✔️ تم مسح كل الردود 🚀"
+return "✓ تم مسح كل الردود 🚀"
 end
 
 if r== 'مسح الردود العامه' then
@@ -180,7 +180,7 @@ local names = redis:hkeys(th3boss..'replay:all')
 for i=1, #names do
 redis:hdel(th3boss..'replay:all',names[i])
 end
-return "✔️ تم مسح كل الردود العامه🚀"
+return "✓ تم مسح كل الردود العامه🚀"
 
 end
 
