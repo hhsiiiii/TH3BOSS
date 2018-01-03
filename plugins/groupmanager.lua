@@ -344,7 +344,7 @@ return "❖￤ _مرحبآ عزيزي_\n❖￤ _تم ارسال الرابط خ�
 end
 if matches[1] == "ضع القوانين" and is_mod(msg) then
 redis:setex(th3boss..'rulse:witting'..msg.from.id,300,true)
-return '❖￤ حسننا عزيزي  ✋🏿\n❖￤ الان ارسل القوانين  للمجموعه 🍃'
+return '❖￤ حسنآ عزيزي  ✋🏿\n❖￤ الان ارسل القوانين  للمجموعه 🍃'
 end
 if matches[1] == "القوانين" then
 if not redis:get(th3boss..'rulse:msg'..msg.to.id) then
@@ -404,7 +404,7 @@ end
 end
 if matches[1] == "ضع اسم" and is_mod(msg) then
 redis:setex(th3boss..'name:witting'..msg.from.id,300,true)
-return "❖￤ حسننا عزيزي  ✋🏿\n❖￤ الان ارسل الاسم  للمجموعه 🍃"
+return "❖￤ حسنآ عزيزي  ✋🏿\n❖￤ الان ارسل الاسم  للمجموعه 🍃"
 end
 if matches[1] == "ضع صوره" and is_mod(msg) then
 if msg.reply_id  then
@@ -426,12 +426,12 @@ end
 tdcli_function ({ ID = 'GetMessage', chat_id_ = msg.chat_id_, message_id_ = msg.reply_to_message_id_ }, photomsg, nil)
 else
 redis:setex(th3boss..'photo:group'..msg.from.id,300,true)
-return '❖￤ حسننا عزيزي 🍁\n🌄 ¦ الان قم بارسال الصوره  🛠'
+return '❖￤ حسنآ عزيزي 🍁\n🌄 ¦ الان قم بارسال الصوره  🛠'
 end
 end
 if matches[1] == "ضع وصف" and is_mod(msg) then
 redis:setex(th3boss..'about:witting'..msg.from.id,300,true) 
-return "❖￤ حسننا عزيزي  ✋🏿\n❖￤ الان ارسل الوصف  للمجموعه 🍃"
+return "❖￤ حسنآ عزيزي  ✋🏿\n❖￤ الان ارسل الوصف  للمجموعه 🍃"
 end
 if matches[1] == "منع" and is_mod(msg) then
 return filter_word(msg, matches[2])
@@ -596,7 +596,7 @@ return "❖￤ _مرحبا عزيزي_\n❖￤ _تم تعطيل التحذير_ 
 end end end
 if matches[1] == "ضع الترحيب" and is_mod(msg) then
 redis:set(th3boss..'welcom:witting'..msg.from.id,true)
-return "❖￤ حسننا عزيزي  ✋🏿\n❖￤ ارسل كليشه الترحيب الان 🍃"
+return "❖￤ حسنآ عزيزي  ✋🏿\n❖￤ ارسل كليشه الترحيب الان 🍃"
 end
 if matches[1] == "الترحيب"  and is_mod(msg) then
 if redis:get(th3boss..'welcome:msg'..msg.to.id)  then
