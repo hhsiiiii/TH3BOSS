@@ -2,7 +2,7 @@
 -- BY @TH3BOSS
 -- BY @lBOSSl
 
-function run(msg, matches)
+function moody(msg, matches)
 if we_sudo(msg) then
 if matches[1] == "تنظيف البوت" then
 run_bash("rm -rf ~/.telegram-cli/data/sticker/*")
@@ -480,12 +480,6 @@ local text = [[☔️¦ اوامر الملفات 🌑
 return tdcli.sendMessage(msg.to.id, 1, 1, text, 1, 'md')
 end
 end
-
-
-if matches[1] == "=" then
-
-end
-
 if matches[1] == "المطور" then
 local text = [[❖￤ اهلا بك في سورس الزعيم 🔎
 
@@ -493,7 +487,8 @@ local text = [[❖￤ اهلا بك في سورس الزعيم 🔎
 ❖￤ Version 𝟐𝟓 ⇔ 𝟐𝟓 الاصدار  
 
 ❖￤ المطور ⇔
-❖￤  ]]..sudouser..[[
+
+❖￤   ]]..sudouser..[[
 
 ❖￤ قناه السورس ⇔
 ❖￤ Channel ⇔ @lBOSSl
@@ -506,6 +501,7 @@ local text = [[❖￤ اهلا بك في سورس الزعيم 🔎
 
 return tdcli.sendMessage(msg.to.id, msg.id, 1, text, 1, 'md')
 end
+
 if matches[1] == "/git" then
 if not is_mod(msg) then return 'للاداريين فقط' end
      url = "https://api.github.com/users/"..URL.escape(matches[2])
@@ -543,7 +539,6 @@ end
 
 return { 
 patterns = {   
-"^(=)$", 
 "^(/git) (.*)$", 
 "^(صوره الترحيب)$", 
 "^(ضع صوره للترحيب)$", 
@@ -585,8 +580,8 @@ patterns = {
 run = moody,
 pre_process = pre_process
 }
- 
- -- BY MOHAMMED HISHAM
+
+-- BY MOHAMMED HISHAM
 -- BY @TH3BOSS
 -- BY @lBOSSl
 -- V25
