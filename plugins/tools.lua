@@ -278,7 +278,7 @@ echo '🃏￤CPU Usage : '"$CPUPer"'%'
 echo '🃏￤SSD : '"$hdd"'%'
 echo '🃏￤Processes : '"$ProcessCnt"
 echo '🃏￤Uptime : '"$uptime"
-echo "💯-Đєⱴ Ϲḫ₳ͷͷєℓ: @verxbot"
+echo "💯-Đєⱴ Ϲḫ₳ͷͷєℓ: @lBOSSl"
 ]]):read('*all')
 return th3boss
 end
