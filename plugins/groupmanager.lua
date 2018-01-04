@@ -28,7 +28,7 @@ else rank = 'فقط عضو 😹'
 end
 if msg.from.username then userxn = "@"..msg.from.username else userxn = "لا يتوفر" end
 local msgs = tonumber(redis:get(th3boss..'msgs:'..msg.from.id..':'..msg.to.id) or 0)
-tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'❖￤ اسمك : '..namecut(msg.from.first_name)..'\n❖￤ معرفك : '..userxn..'\n❖￤ ايديك : '..msg.from.id..'\n❖￤ رتبتك : '..rank..' \n📬¦ عدد رسائلك : ['..msgs..'] رسالة \n',dl_cb,nil)
+tdcli.sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, data.photos_[0].sizes_[1].photo_.persistent_id_,'❖￤ اسمك : '..namecut(msg.from.first_name)..'\n❖￤ معرفك : '..userxn..'\n❖￤ ايديك : '..msg.from.id..'\n❖￤ رتبتك : '..rank..' \n📬¦ عدد رسائلك : ['..msgs..'] رساله \n',dl_cb,nil)
 else
 tdcli.sendMessage(msg.to.id, msg.id_, 1, "❖￤ لا يوجد صوره في بروفايلك ...!\n\n *❖￤ ايدي المجموعه :* `"..msg.to.id.."`\n*❖￤ ايديك :* `"..msg.from.id.."`", 1, 'md')
 end
@@ -334,18 +334,18 @@ if matches[1] == "الرابط" then
 if not redis:get(th3boss..'linkgp'..msg.to.id) then
 return "❖￤ _اوه 🙀 لا يوجد هنا رابط_\n❖￤ _رجائا اكتب [ضع رابط]_🔃"
 end
-return tdcli.sendMessage(msg.to.id, msg.id, 1, "<b>رابط المجموعة  :</b>\n"..redis:get(th3boss..'linkgp'..msg.to.id), 1, 'html')
+return tdcli.sendMessage(msg.to.id, msg.id, 1, "<b>❖￤رابـط الـمـجـمـوعه 🌿 🛠</b>\n"..redis:get(th3boss..'linkgp'..msg.to.id), 1, 'html')
 end
 if matches[1] == "الرابط خاص" and is_mod(msg) then
 if not redis:get(th3boss..'linkgp'..msg.to.id) then
 return "❖￤ _اوه 🙀 لا يوجد هنا رابط_\n❖￤ _رجائا اكتب [ضع رابط]_🔃"
 end
-tdcli.sendMessage(msg.from.id, 0, 1, "<code>❖￤رابـط الـمـجـمـوعه 💯\n❖￤"..msg.to.title.." :\n\n</code>"..redis:get(th3boss..'linkgp'..msg.to.id)..'\n', 1, 'html')
+tdcli.sendMessage(msg.from.id, 0, 1, "<code>❖￤رابـط الـمـجـمـوعه 🌿 🛠\n❖￤"..msg.to.title.." :\n\n</code>"..redis:get(th3boss..'linkgp'..msg.to.id)..'\n', 1, 'html')
 return "❖￤ _مرحبآ عزيزي_\n❖￤ _تم ارسال الرابط خاص لك _🔃"
 end
 if matches[1] == "ضع القوانين" and is_mod(msg) then
 redis:setex(th3boss..'rulse:witting'..msg.from.id,300,true)
-return '📭¦ حسنآ عزيزي  ✋🏿\n🗯¦ الان ارسل القوانين  للمجموعه 🍃'
+return '📭¦ حسنآ عزيزي  ✋🏿\n❖￤ الان ارسل القوانين  للمجموعه 🍃'
 end
 if matches[1] == "القوانين" then
 if not redis:get(th3boss..'rulse:msg'..msg.to.id) then
@@ -405,7 +405,7 @@ end
 end
 if matches[1] == "ضع اسم" and is_mod(msg) then
 redis:setex(th3boss..'name:witting'..msg.from.id,300,true)
-return "📭¦ حسنآ عزيزي  ✋🏿\n🗯¦ الان ارسل الاسم  للمجموعه 🍃"
+return "📭¦ حسنآ عزيزي  ✋🏿\n❖￤ الان ارسل الاسم  للمجموعه 🍃"
 end
 if matches[1] == "ضع صوره" and is_mod(msg) then
 if msg.reply_id  then
@@ -419,7 +419,7 @@ photo_id = data.content_.photo_.sizes_[0].photo_.persistent_id_
 end
 tdcli.changeChatPhoto(msg.to.id, photo_id)
 sleep(0.8)
-tdcli.sendMessage(msg.to.id, msg.id_,1, '🚸 ¦ تم تغيير صـورهہ‏‏ آلمـجمـوعهہ 🌿', 1, 'html')
+tdcli.sendMessage(msg.to.id, msg.id_,1, '❖￤ تم تغيير صـورهہ‏‏ آلمـجمـوعهہ 🌿', 1, 'html')
 end
 end
 tdcli_function ({ ID = 'GetMessage', chat_id_ = msg.chat_id_, message_id_ = data.id_ }, photoinfo, nil)
@@ -427,12 +427,12 @@ end
 tdcli_function ({ ID = 'GetMessage', chat_id_ = msg.chat_id_, message_id_ = msg.reply_to_message_id_ }, photomsg, nil)
 else
 redis:setex(th3boss..'photo:group'..msg.from.id,300,true)
-return '📭¦ حسنآ عزيزي 🍁\n🌄 ¦ الان قم بارسال الصوره  🛠'
+return '📭¦ حسنآ عزيزي 🍁\n❖￤ الان قم بارسال الصوره  🛠'
 end
 end
 if matches[1] == "ضع وصف" and is_mod(msg) then
 redis:setex(th3boss..'about:witting'..msg.from.id,300,true) 
-return "📭¦ حسنآ عزيزي  ✋🏿\n🗯¦ الان ارسل الوصف  للمجموعه 🍃"
+return "📭¦ حسنآ عزيزي  ✋🏿\n❖￤ الان ارسل الوصف  للمجموعه 🍃"
 end
 if matches[1] == "منع" and is_mod(msg) then
 return filter_word(msg, matches[2])
@@ -472,15 +472,15 @@ deleted = deleted + 1
 end
 end
 if deleted == 0 then
-tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ لا يوجد بوتات في المجموعة 💯', 1, 'md')
+tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ لا يوجد بوتات في المجموعه 🛠', 1, 'md')
 else
-tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ تم طرد [<code>'..deleted..'</code>] بوت من المجموعة 💯', 1, 'html')
+tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ تم طرد [<code>'..deleted..'</code>] بوت من المجموعه 🛠', 1, 'html')
 end
 end
 tdcli.getChannelMembers(msg.to.id, 0, 'Bots', 200, delbots, nil)
 end
 if matches[1] == 'طرد الكل' and is_sudo(msg) then 
-if tonumber(msg.from.id) ~= tonumber(SUDO) then return "☔️هذا الاوامر للمطور الاساسي فقط 🌑" end
+if tonumber(msg.from.id) ~= tonumber(SUDO) then return "❖￤هذا الاوامر للمطور الاساسي فقط 🛠" end
 
   function m(arg, data) 
     for k, v in pairs(data.members_) do 
@@ -488,7 +488,7 @@ if tonumber(msg.from.id) ~= tonumber(SUDO) then return "☔️هذا الاوا�
       kick_user(v.user_id_, msg.to.id) 
 	  end
  end 
-    tdcli.sendMessage(msg.to.id, msg.id, 1, '📛┇  _طردتهم الــك حبعمري_ 💯', 1, 'md') 
+    tdcli.sendMessage(msg.to.id, msg.id, 1, '📛┇  _طردتهم الــك حبعمري_ 🛠', 1, 'md') 
   end 
   tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.to.id).ID,offset_ = 0,limit_ = 80}, m, nil)
   end 
@@ -502,15 +502,15 @@ i = i + 1
 end
 end
 if i == 0 then
-tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ لا يوجد بوتات في المجموعة 💯', 1, 'md')
+tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ لا يوجد بوتات في المجموعه 🛠', 1, 'md')
 else
-tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ عدد البوتات الموجودة [<code>'..i..'</code>] بوت💯',1, 'html')
+tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ عدد البوتات الموجوده [<code>'..i..'</code>] بوت 🛠',1, 'html')
 end
 end
 tdcli.getChannelMembers(msg.to.id, 0, 'Bots', 100, kshf, nil)
 end
 if matches[1] == 'طرد المحذوف' then 
-if not we_sudo(msg) then return "☔️هذا الاوامر للمطور الاساسي فقط 🌑" end
+if not we_sudo(msg) then return "❖￤هذا الاوامر للمطور الاساسي فقط 🛠" end
 
 function userdel(arg, data) 
 for k, v in pairs(data.members_) do 
@@ -523,7 +523,7 @@ tdcli_function ({ID = "GetUser",user_id_ = v.user_id_}, infousers, {group=arg.gr
 end 
 end 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.to.id).ID,offset_ = 0,limit_ = 100}, userdel, {group=msg.to.id})
-tdcli.sendMessage(msg.to.id, msg.id, 1, '🚸 ¦ تم طـرد آلحسـآبآت آلمـحذوفهہ‏‏ 🌿', 1, 'md') 
+tdcli.sendMessage(msg.to.id, msg.id, 1, '❖￤ تم طـرد آلحسـآبآت آلمـحذوفهہ‏‏ 🌿', 1, 'md') 
 end 
 --------------------- Welcome -----------------------
 if matches[1] == "تفعيل" and is_mod(msg) then
@@ -534,7 +534,7 @@ if matches[2] == "البوت خدمي" then
 return unlock_service(msg)
 end
 if matches[2] == "الاذاعه" and is_sudo(msg) then
-if tonumber(msg.from.id) ~= tonumber(SUDO) then return "☔️هذا الاوامر للمطور الاساسي فقط 🌑" end
+if tonumber(msg.from.id) ~= tonumber(SUDO) then return "❖￤هذا الاوامر للمطور الاساسي فقط 🛠" end
 return unlock_brod(msg)
 end
 if matches[2] == "الايدي" then
@@ -547,7 +547,7 @@ end
 end
 if matches[2] == "الترحيب" then
 if redis:get(th3boss..'welcome:get'..msg.to.id) then
-return "❖￤ _مرحبا عزيزي_\n❖￤ _تشغيل الترحيب مفعل مسبقاً_ ✓"
+return "❖￤ _مرحبا عزيزي_\n❖￤ _تفعيل الترحيب مفعل مسبقاً_ ✓"
 else
 redis:set(th3boss..'welcome:get'..msg.to.id,true) 
 return "❖￤ _مرحبا عزيزي_\n❖￤ _تم تفعيل الترحيب_ ✓"
@@ -555,7 +555,7 @@ end
 end
 if matches[2] == "التحذير" then
 if redis:get(th3boss..'lock_woring'..msg.to.id) then
-return "❖￤ _مرحبا عزيزي_\n❖￤ _تشغيل التحذير مفعل مسبقاً_ ✓"
+return "❖￤ _مرحبا عزيزي_\n❖￤ _تفعيل التحذير مفعل مسبقاً_ ✓"
 else
 redis:set(th3boss..'lock_woring'..msg.to.id,true)
 return "❖￤ _مرحبا عزيزي_\n❖￤ _تم تفعيل التحذير_ ✓"
@@ -569,7 +569,7 @@ if matches[2] == "البوت خدمي" then
 return lock_service(msg)
 end
 if matches[2] == "الاذاعه" and is_sudo(msg) then
-if tonumber(msg.from.id) ~= tonumber(SUDO) then return "☔️هذا الاوامر للمطور الاساسي فقط 🌑" end
+if tonumber(msg.from.id) ~= tonumber(SUDO) then return "❖￤هذا الاوامر للمطور الاساسي فقط 🛠" end
 return lock_brod(msg)
 end
 if matches[2] == "الايدي" then
@@ -597,7 +597,7 @@ return "❖￤ _مرحبا عزيزي_\n❖￤ _تم تعطيل التحذير_ 
 end end end
 if matches[1] == "ضع الترحيب" and is_mod(msg) then
 redis:set(th3boss..'welcom:witting'..msg.from.id,true)
-return "📭¦ حسنآ عزيزي  ✋🏿\n🗯¦ ارسل كليشه الترحيب الان 🍃"
+return "📭¦ حسنآ عزيزي  ✋🏿\n❖￤ ارسل كليشه الترحيب الان 🍃"
 end
 if matches[1] == "الترحيب"  and is_mod(msg) then
 if redis:get(th3boss..'welcome:msg'..msg.to.id)  then
@@ -628,34 +628,34 @@ end -- نهايه حصانه اذا كان المجموعه مفعله
 
 if matches[1] == 'اذاعه عام بالتوجيه' and is_sudo(msg) then		
 if not we_sudo(msg) and not redis:get(th3boss..'lock_brod') then 
-return "هذا الاوامر للمطور الاساسي فقط " 
+return "❖￤ هذا الاوامر للمطور الاساسي فقط  🛠" 
 end
 redis:setex(th3boss..'fwd:'..msg.from.id,300, true)
-return "📭¦ _حسننا الان ارسل التوجيه للاذاعه _🍃\n"
+return "📭¦ _حسنآ الان ارسل التوجيه للاذاعه _🍃\n"
 end
 
 if matches[1] == 'اذاعه عام' and is_sudo(msg) then		
 if not we_sudo(msg) and not redis:get(th3boss..'lock_brod') then 
-return "هذا الاوامر للمطور الاساسي فقط " 
+return "❖￤ هذا الاوامر للمطور الاساسي فقط  🛠" 
 end
 redis:setex(th3boss..'fwd:all'..msg.from.id,300, true)
-return "📭¦ _حسننا الان ارسل الكليشه للاذاعه عام _🍃\n"
+return "📭¦ _حسنآ الان ارسل الكليشه للاذاعه عام _🍃\n"
 end
 
 if matches[1] == 'اذاعه خاص' and is_sudo(msg) then		
 if not we_sudo(msg) and not redis:get(th3boss..'lock_brod') then 
-return "هذا الاوامر للمطور الاساسي فقط " 
+return "❖￤ هذا الاوامر للمطور الاساسي فقط  🛠" 
 end
 redis:setex(th3boss..'fwd:pv'..msg.from.id,300, true)
-return "📭¦ _حسننا الان ارسل الكليشه للاذاعه خاص _🍃\n"	
+return "📭¦ _حسنآ الان ارسل الكليشه للاذاعه خاص _🍃\n"	
 end
 
 if matches[1] == 'اذاعه' and is_sudo(msg) then		
 if not we_sudo(msg) and not redis:get(th3boss..'lock_brod') then 
-return "هذا الاوامر للمطور الاساسي فقط " 
+return "❖￤ هذا الاوامر للمطور الاساسي فقط  🛠" 
 end
 redis:setex(th3boss..'fwd:groups'..msg.from.id,300, true)
-return "📭¦ _حسننا الان ارسل الكليشه للاذاعه للمجموعات _🍃\n"	
+return "📭¦ _حسنآ الان ارسل الكليشه للاذاعه للمجموعات _🍃\n"	
 end
 
 ----------------- استقبال الرسائل ---------------
@@ -680,7 +680,7 @@ end
 if redis:get(th3boss..'name:witting'..msg.from.id) then --- استقبال الوصف
 redis:del(th3boss..'name:witting'..msg.from.id)
 tdcli.changeChatTitle(msg.to.id, msg.text, dl_cb, nil)
-return "📭¦ تم تغير اسم المجموعه  ✋🏿\n🗯¦ الان اسمه `"..check_markdown(msg.text).."` 🍃"
+return "📭¦ تم تغير اسم المجموعه  ✋🏿\n❖￤ الان اسمه `"..check_markdown(msg.text).."` 🍃"
 end
 --------------------------------------------------------------
 if redis:get(th3boss..'about:witting'..msg.from.id) then --- استقبال الوصف
@@ -732,7 +732,7 @@ local function welcome_cb(arg, data)
 if redis:get(th3boss..'welcome:msg'..msg.to.id) then
 welcome = redis:get(th3boss..'welcome:msg'..msg.to.id) 
 else
-welcome = "❖￤ مرحباً عزيزي\n❖￤ نورت المجموعة \n❖￤ تابع : @lBOSSl\n💂🏼‍♀️"
+welcome = "❖￤ مرحباً عزيزي\n❖￤ نورت المجموعه \n❖￤ تابع : @lBOSSl\n💂🏼‍♀️"
 end
 if redis:get(th3boss..'rulse:msg'..msg.to.id) then
 rules = redis:get(th3boss..'rulse:msg'..msg.to.id)
@@ -776,10 +776,10 @@ patterns ={
 '^(تعطيل)$',
 '^(رفع الادمنيه)$',
 '^(رفع المدير)$',
-'^(رفع المير) (@[%a%d%_]+)$',
-'^(رفع المير) (%d+)$',
-'^(تنزيل المير) (@[%a%d%_]+)$',
-'^(تنزيل المير) (%d+)$',
+'^(رفع المدير) (@[%a%d%_]+)$',
+'^(رفع المدير) (%d+)$',
+'^(تنزيل المدير) (@[%a%d%_]+)$',
+'^(تنزيل المدير) (%d+)$',
 '^(تنزيل المدير)$',
 '^(رفع عضو مميز) (@[%a%d%_]+)$',
 '^(رفع عضو مميز) (%d+)$',
@@ -840,6 +840,7 @@ patterns ={
 run=moody,
 pre_process = pre_process
 }
+
 -- BY MOHAMMED HISHAM
 -- BY @TH3BOSS
 -- BY @lBOSSl
