@@ -22,7 +22,7 @@ if not redis:get(th3boss..'autodeltime') then
      run_bash("rm -rf ~/.telegram-cli/data/encrypted/*")
 	 run_bash("rm -rf ./data/photos/*")
 end
-
+ 
 if msg.to.type == "channel" and msg.adduser and msg.adduser == tonumber(our_id) then
 
 if not redis:get(th3boss..'extimeadd'..msg.to.id) then
@@ -30,13 +30,13 @@ redis:setex(th3boss..'extimeadd'..msg.to.id, 300 , true)
 local msg_welcom = [[❖￤ مـرحبآ آنآ بوت آسـمـي ]]..bot_name..[[ 🎖
 ❖￤ آختصـآصـي حمـآيهہ‏‏ آلمـجمـوعآت
 ❖￤ مـن آلسـبآم وآلتوجيهہ‏‏ وآلتگرآر وآلخ...
-❖￤ مـعرف آلمـطـور  : ]]..sudouser..[[ 🌿
+❖￤ مـعرف آلمـطـور  : ]]..sudouser:gsub([[\_]],'_')..[[ 🌿
 👨🏽‍🔧]]
  return tdcli.sendPhoto(msg.to.id, msg.id, 0, 1, nil, './data/photo/boss.jpg', msg_welcom)
 end
 
 if not redis:get(th3boss..'group:add'..msg.to.id) and not redis:get(th3boss..'extimeadd'..msg.to.id) and not is_sudo(msg) then
-tdcli.sendMessage(msg.to.id, 0, 1, '🚸¦ لا يمكنكم تفعيل البوت 📛\n❖￤ فقط المطور يگدر يفعل : '..sudouser.. ' 🍃\n🚷¦ سوف اغادر چاؤو 🚶', 1, 'md')
+tdcli.sendMessage(msg.to.id, 0, 1, '🚸¦ لا يمكنكم تفعيل البوت 📛\n❖￤ فقط المطور يستطيع يفعل : '..sudouser.. ' 🍃\n🚷¦ سوف اغادر چاؤو 🚶', 1, 'md')
 botrem(msg)
 end
 end
