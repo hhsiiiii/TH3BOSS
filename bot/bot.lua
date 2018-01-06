@@ -244,7 +244,7 @@ function load_plugins()
 			print('\27[31m'..err..'\27[39m')
 		end
 	end
-	print('\n\27[0;32m'..#config.enabled_plugins..' Plugins Are Active\n\n\27[0;31mStarting TH3BOSS v5 Robot...\n\27[m')
+	print('\n\27[0;32m'..#config.enabled_plugins..' Plugins Are Active\n\n\27[0;31mStarting TH3BOSS V25 Robot...\n\27[m')
 end
 
 load_plugins()
