@@ -52,6 +52,3 @@ cd $THIS_DIR
   chmod +x libs
   lua ./bot/bot.lua
   chmod +x TH3BOSS.sh
-  screen -S boss ./TH3BOSS.sh 
-
-
