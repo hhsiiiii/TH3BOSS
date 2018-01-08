@@ -92,7 +92,7 @@ end
  
 if (msg.to.type == "pv") and  not is_sudo(msg) and msg.from.id ~= bot.id then -- ارسال رساله للاعضاء الي يدخلون خاص
 
-tdcli.sendMessage(msg.to.id, 0, 1, "❖￤ تم آرسـآل رسـآلتگ آلى آلمـطـور\n📬¦ سـآرد عليگ في آقرب وقت\n🎟¦ـ @TH3BOSS \n 🏌️", 1, '')
+tdcli.sendMessage(msg.to.id, 0, 1, "❖￤ تم آرسـآل رسـآلتگ آلى آلمـطـور\n📬¦ سـآرد عليگ في آقرب وقت\n🎟¦ـ "..sudouser.." \n 🏌️", 1, 'md')
 tdcli.forwardMessages(SUDO,msg.to.id, {[0] = msg.id}, 0)
 end
 if (r=="تيست" or r=="test") and is_sudo(msg) then
