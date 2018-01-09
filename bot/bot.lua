@@ -108,11 +108,16 @@ if not tostring(SUDO):match('%d+') then
 SUDO = 60809019
 end
 io.write('\n\27[1;33m￤ارسل توكن البوت الان ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
-local token = io.read()
+local tokenz = io.read()
+if tokenz ~= '' then
+token = tokenz:gsub(' ','')
+end
 io.write('\n\27[1;33m￤ادخل الان اسم البوت الذي تريده ↓  \n￤Enter Name Your BOT : \27[0;39;49m')
-local botname = io.read()
-if botname =="" then
+local botnamex = io.read()
+if botnamex =="" then
 botname = "الزعيم"
+else
+botname = botnamex:gsub(' ','')
 end
 io.write('\n\27[1;33m￤ادخل معرف المطور ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
 local sudouser = io.read()
