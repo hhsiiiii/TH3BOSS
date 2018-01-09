@@ -546,48 +546,6 @@ redis:set(th3boss..'lock_webpage'..msg.to.id,true)
 return '❖￤تم فتح الويب ✓\n❖￤ بواسطه ⇔ '..moody..''
 end
 end
-
----------------Lock Pin-------------------
-function lock_pin(msg, data, target) 
-if not is_mod(msg) then return "❖￤ هذا الامر يخص الادمنيه فقط  🚶" 
-end
--- حصانه التحقق من العضو --
-if is_sudo(msg) then
-moody = 'المطور'
-elseif is_owner(msg) then
-moody = 'المدير'
-elseif is_mod(msg) then
-moody = 'ادمن'
-end
--- حصانه التحقق من العضو --
-if redis:get(th3boss..'lock_pin'..msg.to.id) then
-return '❖￤التثبيت بالتأكيد تم قفله ✓\n❖￤ بواسطه ⇔ '..moody..''
-else
-redis:set(th3boss..'lock_pin'..msg.to.id,true)
-return '❖￤تم قفل التثبيت ✓\n❖￤ بواسطه ⇔ '..moody..''
-end
-end
-
-function unlock_pin(msg, data, target)
-if not is_mod(msg) then return "❖￤ هذا الامر يخص الادمنيه فقط  🚶" 
-end
--- حصانه التحقق من العضو --
-if is_sudo(msg) then
-moody = 'المطور'
-elseif is_owner(msg) then
-moody = 'المدير'
-elseif is_mod(msg) then
-moody = 'ادمن'
-end
--- حصانه التحقق من العضو --
-if not redis:get(th3boss..'lock_pin'..msg.to.id) then
-return '❖￤التثبيت بالتأكيد تم فتحه ✓\n❖￤ بواسطه ⇔ '..moody..''
-else 
-redis:del(th3boss..'lock_pin'..msg.to.id)
-return '❖￤تم فتح التثبيت ✓\n❖￤ بواسطه ⇔ '..moody..''
-end
-end
-
 ---------------Mute Gif-------------------
 function mute_gif(msg, data, target) 
 if not is_mod(msg) then return "❖￤ هذا الامر يخص الادمنيه فقط  🚶" 
