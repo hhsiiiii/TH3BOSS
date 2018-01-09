@@ -185,9 +185,6 @@ end
 if matches[2] == "الويب" then
 return unlock_webpage(msg)
 end
-if matches[2] == "التثبيت" and is_owner(msg) then
-return unlock_pin(msg)
-end
 end
 if matches[1] == "قفل" and is_mod(msg) then
 if matches[2] == "الكل" then
