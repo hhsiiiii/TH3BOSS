@@ -493,9 +493,7 @@ local text = [[❖￤ اهلا بك في سورس الزعيم 🔎
 
 ❖￤ رابط Github Api ⇔
 ❖￤ https://github.com/moody2020/TH3BOSS
-
-❖￤ رابط Github ⇔
-❖￤ https://github.com/moody2020 ]]
+]]
 
 return tdcli.sendMessage(msg.to.id, msg.id, 1, text, 1, 'md')
 end
