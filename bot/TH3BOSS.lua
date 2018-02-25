@@ -75,13 +75,13 @@ print('\27[0;33m>>'..[[
     888     888    888 Y88b  d88P 888   d88P Y88b. .d88P Y88b  d88P Y88b  d88P 
     888     888    888  "Y8888P"  8888888P"   "Y88888P"   "Y8888P"   "Y8888P"      
 
-]]..'\27[0;31m'..[[@XBMBX]]..'\27[m'..[[ 
+]]..'\27[0;31m'..[[https://t.me/c_10n]]..'\27[m'..[[ 
                                               
-]]..'\27[0;31m'..[[@lBOSSl]]..'\27[m'..[[   
+]]..'\27[0;31m'..[[https://t.me/c_10n]]..'\27[m'..[[   
                                             
-]]..'\27[0;31m'..[[@TH3BOSS]]..'\27[m'..[[  
+]]..'\27[0;31m'..[[https://t.me/c_10n]]..'\27[m'..[[  
                                              
-]]..'\27[0;31m'..[[@TH3BOSSBOT]]..'\27[m'..[[                                               
+]]..'\27[0;31m'..[[https://t.me/c_10n]]..'\27[m'..[[                                               
 
 
 ]])
@@ -108,19 +108,19 @@ end
 
 function create_config( )
 io.write('\n\27[1;33m￤دخل ايدي حسابك لتصبح مطور ↓  \n￤Enter your ID SUDO : \27[0;39;49m')
-local SUDO = tonumber(io.read())
+local SUDO = tonumber(io.read(https://t.me/c_10n))
 if not tostring(SUDO):match('%d+') then
 SUDO = 60809019
 end
 io.write('\n\27[1;33m￤ارسل توكن البوت الان ↓  \n￤Enter TOKEN your BOT : \27[0;39;49m')
-local token = io.read()
+local token = io.read(https://t.me/c_10n)
 io.write('\n\27[1;33m￤ادخل الان اسم البوت الذي تريده ↓  \n￤Enter Name Your BOT : \27[0;39;49m')
-local botname = io.read()
+local botname = io.read(https://t.me/c_10n)
 if botname =="" then
 botname = "الزعيم"
 end
 io.write('\n\27[1;33m￤ادخل معرف المطور ↓  \n￤Enter your USERNAME SUDO : \27[0;39;49m')
-local sudouser = io.read()
+local sudouser = io.read(https://t.me/c_10n)
 if sudouser =="" then
 sudouser = "@TH3BOSS"
 end
